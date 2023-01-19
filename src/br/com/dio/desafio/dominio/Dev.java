@@ -4,12 +4,19 @@ import java.util.*;
 
 public class Dev {
     private String nome;
+
+    private String sobreNome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
+    }
+
+    public String nomeCompleto(){
+        String nomeCompleto = nome + " " + sobreNome;
+        return nomeCompleto;
     }
 
     public void progredir() {
@@ -54,6 +61,13 @@ public class Dev {
         this.conteudosInscritos = conteudosInscritos;
     }
 
+    public String getSobreNome() {
+        return sobreNome;
+    }
+
+    public void setSobreNome(String sobreNome) {
+        this.sobreNome = sobreNome;
+    }
     public Set<Conteudo> getConteudosConcluidos() {
         return conteudosConcluidos;
     }
@@ -72,6 +86,6 @@ public class Dev {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
+        return Objects.hash(nome, sobreNome, conteudosInscritos, conteudosConcluidos);
     }
 }

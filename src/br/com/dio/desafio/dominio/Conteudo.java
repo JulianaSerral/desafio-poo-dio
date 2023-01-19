@@ -6,8 +6,18 @@ public abstract class Conteudo {
 
     private String titulo;
     private String descricao;
+    private double valor;
+
 
     public abstract double calcularXp();
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
 
     public String getTitulo() {
         return titulo;

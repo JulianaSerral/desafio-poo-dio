@@ -19,6 +19,10 @@ local.properties
 .loadpath
 .recommenders
 
+#IntteliJ
+.idea
+.iml
+
 # External tool builders
 .externalToolBuilders/
 
